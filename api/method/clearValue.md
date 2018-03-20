@@ -48,8 +48,7 @@ OK. 3 assertions passed. (7.593s)
 
 ### 可能的错误
 
-Here are the type of errors that you might get when using `clearValue`. Full error details are available when running nightwatch with `--verbose` flag.
-当使用`clearValue`你可能会遇到这种类型的错误。在运行nightwatch的时候加上`--verbose`可以查看全部的错误详情。
+以下是使用`clearValue`时可能遇到的错误类型。运行Nightwatch时使用`--verbose`标志，可以显示完整的错误详细信息。
 
 - ```invalid element state``` - 如果引用的元素不可用或不显示。
 - ```element not visible``` - 如果引用的元素在页面不可访问（或者被CSS隐藏，宽度为0或高度为0）。

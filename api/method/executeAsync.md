@@ -1,4 +1,4 @@
-#### Example
+#### 例子
 
 <div class="sample-test">
 <pre data-language="javascript" class=" language-javascript"><code class=" language-javascript">

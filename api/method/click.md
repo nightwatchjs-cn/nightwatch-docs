@@ -1,8 +1,10 @@
-### Examples
+### 例子
 
-#### 1) Clicking a button
+#### 1) 点击一个按钮
 
 The example below navigates to google.com, searches for the term "nightwatch.js" and clicks the submit button.
+下面的示例访问 google.com，搜索词“nightwatch.js”然后点击提交按钮。
+
 
 <div class="sample-test">
 <pre data-language="javascript" class=" language-javascript"><code class=" language-javascript">
@@ -31,7 +33,7 @@ module.exports = {
 </code></pre>
 </div>
 
-#### Output
+#### 输出
 <div class="sample-test">
 <pre data-language="javascript">
 [Click] Test Suite
@@ -46,9 +48,9 @@ OK. 3 assertions passed. (5.277s)
 </pre>
 </div>
 
-#### 2) Selecting an option from a list
+#### 2) 从列表中选择一个选项
 
-The `click` command is also used to select an option from a drop down list. The example below navigates to https://www.w3.org and selects the "All" option from the regions drop down.
+`click` 命令也用于从下拉列表中选择一个选项。以下示例是访问 https://www.w3.org 并从区域下拉列表中选择“全部”选项。
 
 <div class="sample-test">
 <pre data-language="javascript" class=" language-javascript"><code class=" language-javascript">
@@ -77,7 +79,7 @@ module.exports = {
 </code></pre>
 </div>
 
-#### Output
+#### 输出
 <div class="sample-test">
 <pre data-language="javascript">
 [Click Options] Test Suite
@@ -91,8 +93,8 @@ OK. 2 assertions passed. (6.203s)
 </pre>
 </div>
 
-### Possible Errors
+### 可能的错误
 
-- ```element not visible``` - if the referenced element is not visible on the page (either hidden by CSS, has 0-width, or has 0-height or it is not within the viewport).
+- ```element not visible``` - 如果被引用的元素在页面上不可见（被CSS隐藏，宽度为0，高度为0或者不在视口内）。
 
-Full error details are available when running nightwatch with `--verbose` flag.
+运行Nightwatch时使用`--verbose`标志，可以显示完整的错误详细信息。
