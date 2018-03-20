@@ -1,15 +1,15 @@
 ### ChromeDriver
 
-#### Overview
-[ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/) is a standalone server which implements the W3C WebDriver wire protocol for Chromium. ChromeDriver is available for Chrome on Android and Chrome on Desktop (Mac, Linux, Windows and ChromeOS).  
+#### 概述
+[ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/) 是一个独立的服务器，它为Chromium实现了W3C WebDriver有线协议。 ChromeDriver适用于Android版Chrome和桌面版Chrome（Mac，Linux，Windows和ChromeOS）  
 
-#### Download
+#### 下载
 
-Binaries are available for download on the [ChromeDriver Downloads](https://sites.google.com/a/chromium.org/chromedriver/downloads) page, for various platforms.
+可在这个页面里 [ChromeDriver Downloads](https://sites.google.com/a/chromium.org/chromedriver/downloads) 下载各种平台的ChromeDriver。
 
-#### Selenium Server Usage
+#### Selenium Server 的用法
 
-If you're using ChromeDriver through Selenium Server, simply set the cli argument `"webdriver.chrome.driver"` to point to the location of the binary file. E.g.:
+如果您通过Selenium Server使用ChromeDriver，只需将cli参数 `webdriver.chrome.driver` 设置为指向driver文件的位置即可。 例如：
 
 <pre><code class="language-javascript">{
   <strong>"selenium"</strong> : {
@@ -26,13 +26,15 @@ If you're using ChromeDriver through Selenium Server, simply set the cli argumen
 
 
 
-#### Standalone Usage
+#### Standalone 的用法
 
 If you're only running your tests against Chrome, running ChromeDriver standalone is easier and slightly faster. Also there is no dependency on Java.
 
-This requires a bit more configuration:<br><br>
+如果您只针对Chrome运行测试，则运行ChromeDriver standalone 会更容易，速度更快。 也没有依赖于Java。
 
-##### 1) First, disable Selenium Server, if applicable:
+这需要一点配置：<br><br>
+
+##### 1) 首先，如果可以的话禁用Selenium Server：
 
 <pre><code class="language-javascript">{
   <strong>"selenium"</strong> : {
@@ -42,9 +44,9 @@ This requires a bit more configuration:<br><br>
 </code></pre>
 
 
-##### 2) Configure the port and default path prefix.
+##### 2) 配置端口和默认路径前缀
 
-ChromeDriver runs by default on port 9515. We also need to clear the `default_path_prefix`, as it is set by default to `/wd/hub`, which is what selenium is using.
+ChromeDriver默认在端口9515上运行。我们还需要清除`default_path_prefix`，因为它默认设置为 `/wd/hub`，这是selenium正在使用的。
 
 <pre><code class="language-javascript">{
   <strong>"test_settings"</strong> : {
@@ -65,11 +67,11 @@ ChromeDriver runs by default on port 9515. We also need to clear the `default_pa
 }
 </code></pre>
 
-##### 3) Start the ChromeDriver server
+##### 3) 启动 ChromeDriver server
 
-The easiest way to manage the ChromeDriver process is by using the `chromedriver` [NPM package](https://www.npmjs.com/package/chromedriver), which is a third-party wrapper against the binary. This will abstract the downloading of the chromedriver binary and will make it easy to manage starting and stopping of the process.
+管理ChromeDriver进程的最简单方法是使用 `chromedriver` [NPM软件包](https://www.npmjs.com/package/chromedriver)，它是对chromedriver文件的第三方包装。 这将抽象出chromedriver文件的下载，并且可以很容易地管理进程的启动和停止。
 
-You can add this to your `external globals` file, like so:
+你可以将它添加到你的 `external globals` 文件中，如下所示：
 
 <pre><code class="language-javascript">
 var chromedriver = require('chromedriver');
@@ -88,11 +90,11 @@ module.exports = {
 };  
 </code></pre>
 
-#### Using a fixed ChromeDriver version
+#### 使用修正版本的ChromeDriver
 
-In some situations you may need to use a specific version of ChromeDriver. For instance, the CI server runs an older version of Chrome. Then you will need an older version of ChromeDriver.
+在某些情况下，您可能需要使用特定版本的ChromeDriver。 例如，CI服务器运行较旧版本的Chrome。 然后你将需要一个老版本的ChromeDriver。
 
-Here's what your globals file might look like:
+以下是您的全局文件可能的样子：
 <br>
 <pre><code class="language-javascript">
 var chromedriver = require('chromedriver');
@@ -141,26 +143,28 @@ module.exports = {
 };</code></pre>
 <br><br>
 
-Run your tests then with (on the CI server):
+运行测试（在CI服务器上）：
 
 <pre><code class="language-bash">$ ./node_modules/.bin/nightwatch --env ci-server</code></pre>
 
 #### ChromeOptions
 You can specify Chrome options or switches using the `chromeOptions` dictionary, under the `desiredCapabilities`. Refer to the [ChromeDriver website](https://sites.google.com/a/chromium.org/chromedriver/capabilities#TOC-chromeOptions-object) for a fill list of supported capabilities and options.
 
-#### Command line usage
+您可以在 `desiredCapabilities` 下使用 `chromeOptions` 字典指定Chrome选项或开关。请参阅 [ChromeDriver网站](https://sites.google.com/a/chromium.org/chromedriver/capabilities#TOC-chromeOptions-object) 以获取支持的功能和选项的填写列表。
+
+#### 命令行用法
 
 <pre><code>$ ./bin/chromedriver -h
 Usage: ./bin/chromedriver [OPTIONS]
 
 Options
-  --port=PORT                     port to listen on
-  --adb-port=PORT                 adb server port
-  --log-path=FILE                 write server log to file instead of stderr, increases log level to INFO
-  --verbose                       log verbosely
-  --version                       print the version number and exit
-  --silent                        log nothing
-  --url-base                      base URL path prefix for commands, e.g. wd/url
-  --port-server                   address of server to contact for reserving a port
-  --whitelisted-ips               comma-separated whitelist of remote IPv4 addresses which are allowed to connect to ChromeDriver
+  --port=PORT                     监听端口号
+  --adb-port=PORT                 adb服务器端口
+  --log-path=FILE                 将服务器日志写入文件而不是stderr，将日志级别提高到INFO
+  --verbose                       冗长的日志
+  --version                       打印版本号并退出
+  --silent                        不输出日志
+  --url-base                      命令的基本URL路径前缀，例如wd/url
+  --port-server                   联系服务器的地址以预留端口
+  --whitelisted-ips               逗号分隔的允许连接到ChromeDriver的远程IPv4地址的白名单
 </code></pre>

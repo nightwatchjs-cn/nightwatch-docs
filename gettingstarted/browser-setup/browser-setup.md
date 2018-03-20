@@ -1,3 +1,3 @@
-This section contains guides for getting started with most of the major browsers and setup instructions on how to configure the individual webdriver implementations to work with Nightwatch.
+本节包含大多数主流浏览器入门指南以及关于如何配置单个webdriver实现与Nightwatch一起使用的设置说明。
 
-The individual drivers described here are usually standalone applications which are used to interact with the browsers via the WebDriver HTTP API. You can run them either directly, or through the Selenium Server.
+这里描述的单个驱动程序通常是独立的应用程序，用于通过WebDriver HTTP API与浏览器进行交互。 您可以直接运行它们，也可以通过Selenium服务器运行它们。
