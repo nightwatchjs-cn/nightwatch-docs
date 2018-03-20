@@ -1,6 +1,6 @@
-### Examples
+### 例子
 
-The example below navigates to google.com, searches for the term "nightwatch.js", then clears the input using _clearValue_ command and finally verifies if the results container is empty:
+下面的这个例子将打开 google.com, 在搜索框中对“nightwatch.js”进行搜索，然后 _clearValue_ 命令用清除输入，最后验证结果为空：
 
 <div class="sample-test">
 <pre data-language="javascript" class=" language-javascript"><code class=" language-javascript">
@@ -31,7 +31,7 @@ module.exports = {
 </code></pre>
 </div>
 
-### Output
+### 输出
 <div class="sample-test">
 <pre data-language="javascript">
 [Clear Value] Test Suite
@@ -46,9 +46,10 @@ OK. 3 assertions passed. (7.593s)
 </pre>
 </div>
 
-### Possible Errors
+### 可能的错误
 
 Here are the type of errors that you might get when using `clearValue`. Full error details are available when running nightwatch with `--verbose` flag.
+当使用`clearValue`你可能会遇到这种类型的错误。在运行nightwatch的时候加上`--verbose`可以查看全部的错误详情。
 
-- ```invalid element state``` - if the referenced element is disabled or is not displayed.
-- ```element not visible``` - if the referenced element is not visible on the page (either is hidden by CSS, has 0-width, or has 0-height)
+- ```invalid element state``` - 如果引用的元素不可用或不显示。
+- ```element not visible``` - 如果引用的元素在页面不可访问（或者被CSS隐藏，宽度为0或高度为0）。
