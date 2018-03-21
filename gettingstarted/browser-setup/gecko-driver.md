@@ -1,19 +1,21 @@
 ### GeckoDriver
 
-#### Overview
-[GeckoDriver](https://github.com/mozilla/geckodriver) is a standalone application used to interact with Gecko-based browsers, such as Firefox. It is written in Rust and maintained by Mozilla.
+#### 概述
+[GeckoDriver](https://github.com/mozilla/geckodriver) 是一个独立的应用程序，用于与基于Gecko的浏览器（如Firefox）进行交互。 它由Rust编写并由Mozilla维护。
 
-Starting with Firefox 48, GeckoDriver is the only way to automate Firefox, the legacy FirefoxDriver which used to be part of Selenium is no longer supported. Internally it translates the HTTP calls into [Marionette](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette), Mozilla's automation protocol built into Firefox.
+从Firefox 48开始，GeckoDriver是自动化Firefox的唯一方式，传统的FirefoxDriver曾经是Selenium的一部分，将不再支持，它在内部将HTTP调用转换为 [Marionette](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette), Mozilla内置于Firefox的自动化协议。
 
-#### Download
+#### 下载
 
-Binaries are available for download on the [GeckoDriver Releases](https://github.com/mozilla/geckodriver/releases) page on GitHub, for various platforms.
+在这个GitHub页面可下载适合不同平台的[GeckoDriver Releases](https://github.com/mozilla/geckodriver/releases).
 
-Selenium 2.x users are advised to use version __v0.9__, whereas Selenium 3 users should use the latest version.
+建议Selenium 2.x用户使用版本__v0.9__，而Selenium 3用户应该使用最新版本。
 
-#### Usage
+#### 用法
 
 If you're using GeckoDriver through Selenium Server, simply set the cli argument `"webdriver.gecko.driver"` to point to the location of the binary file. E.g.:
+
+如果您通过Selenium Server使用GeckoDriver，只需将cli参数 `webdriver.gecko.driver` 设置为指向Driver文件的位置即可，例如：
 
 <pre><code class="language-javascript">{
   <strong>"selenium"</strong> : {
@@ -28,22 +30,22 @@ If you're using GeckoDriver through Selenium Server, simply set the cli argument
 }
 </code></pre>
 
-GeckoDriver can also be used as a standalone application. Usage steps are documented on GitHub: https://github.com/mozilla/geckodriver#usage.
+GeckoDriver也可以用作独立应用程序，使用步骤文档在GitHub：https://github.com/mozilla/geckodriver#usage.
 <br><br>
-##### Command line usage
+##### 命令行用法
 
 <pre><code>$ ./bin/geckodriver-0.10 -help
 geckodriver 0.10.0
 
-USAGE:
+USAGES:
     geckodriver-0.10 [FLAGS] [OPTIONS]
 
 FLAGS:
-        --connect-existing    Connect to an existing Firefox instance
-    -h, --help                Prints help information
-        --no-e10s             Start Firefox without multiprocess support (e10s) enabled
-    -V, --version             Prints version information
-    -v                        Set the level of verbosity. Pass once for debug level logging and twice for trace level logging
+        --connect-existing    连接到现有的Firefox实例
+    -h, --help                打印帮助信息
+        --no-e10s             在未启用多进程支持（e10s）的情况下启动Firefox
+    -V, --version             打印版本信息
+    -v                        设置详细程度，传递一次调试级别日志记录和两次跟踪级别日志记录
 
 OPTIONS:
     -b, --binary <BINARY>           Path to the Firefox binary, if no binary capability provided
